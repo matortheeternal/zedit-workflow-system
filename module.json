@@ -1,0 +1,9 @@
+{
+  "id": "workflowSystem",
+  "name": "Workflow System",
+  "author": "Mator",
+  "version": "1.0",
+  "released": "00/00/2018",
+  "updated": "8/30/2018",
+  "description": "Provides a system for creating and running workflows."
+}

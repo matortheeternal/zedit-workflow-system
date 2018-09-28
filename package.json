@@ -1,0 +1,23 @@
+{
+  "name": "zedit-workflow-system",
+  "productName": "zEdit Workflow System",
+  "description": "A workflow system for zEdit.",
+  "version": "1.0.0",
+  "author": "Mator",
+  "copyright": "© 2018, Mator",
+  "repository": "https://github.com/z-edit/zedit-workflow-system",
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp build",
+    "release": "gulp release"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-include": "^2.3.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-zip": "^4.0.0",
+    "xelib": "github:matortheeternal/xelib"
+  }
+}

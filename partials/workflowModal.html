@@ -1,0 +1,50 @@
+<div class="modal-container" unfocus-modal>
+    <div class="modal huge-modal">
+        <div class="close-modal" ng-click="cancel()"></div>
+
+        <div class="modal-content" ng-if="!module">
+            <h2>Select Module</h2>
+
+            <div class="tiles">
+                <div class="tile" ng-repeat="module in modules" ng-click="selectModule(module)">
+                    <img ng-src="{{::module.image}}"/>
+                    <span>{{::module.label}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-content" ng-if="module && !workflow">
+            <h2>Select Workflow</h2>
+
+            <div class="tiles">
+                <div class="tile" ng-repeat="workflow in workflows" ng-click="selectWorkflow(workflow)">
+                    <img ng-src="{{::workflow.image}}"/>
+                    <span>{{::workflow.label}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-content" ng-if="workflow">
+            <div class="workflow-stages">
+                <h2>{{::module}} - {{::workflow}}</h2>
+                <div ng-repeat="stage in stages" ng-click="selectStage($index)" ng-class="{'unavailable' : !stage.available}">
+                    {{::stage.name}}
+                </div>
+            </div>
+            <div class="workflow-content">
+                <div ng-include="stage.view.templateUrl" dyn-controller="stage.view.controller"></div>
+                <div class="stage-buttons">
+                    <button ng-show="showPrevious" class="prev-button" ng-click="previousStage()">
+                        Previous
+                    </button>
+                    <button ng-show="showNext" class="next-button" ng-click="nextStage()" ng-disabled="nextEnabled">
+                        Next
+                    </button>
+                    <button ng-show="showFinish" class="finish-button" ng-click="finish()">
+                        Finish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

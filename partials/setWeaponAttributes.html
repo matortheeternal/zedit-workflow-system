@@ -1,0 +1,51 @@
+<label>
+    <span class="input-label">Weapon Name</span>
+    <input type="text" ng-model="weapon.name" />
+</label>
+
+<label>
+    <span class="input-label">Material</span>
+    <select ng-model="weapon.material">
+        <option ng-repeat="material in materials">{{::material}}</option>
+    </select>
+</label>
+
+<label>
+    <span class="input-label">Model</span>
+    <path-input model="weapon.model" default-path="meshesPath" filters="meshFiles"></path-input>
+</label>
+
+<label>
+    <span class="input-label">First Person Model</span>
+    <path-input model="weapon.firstPersonModel" default-path="meshesPath" filters="meshFiles"></path-input>
+</label>
+
+<label>
+    <span class="input-label">Gold Value</span>
+    <number-input model="weapon.value" type="integer"></number-input>
+</label>
+
+<label>
+    <span class="input-label">Weight</span>
+    <number-input model="weapon.weight" type="float"></number-input>
+</label>
+
+<label>
+    <span class="input-label">Damage</span>
+    <number-input model="weapon.damage" type="integer"></number-input>
+</label>
+
+<expandable-section>
+    <title>Advanced</title>
+    <content>
+        <label>
+            <span class="input-label">EditorID</span>
+            <input type="text" ng-model="weapon.editorID" />
+        </label>
+
+        <label>
+            <span class="input-label">Crit Damage</span>
+            <input type="text" ng-model="weapon.critDamage" />
+        </label>
+    </content>
+</expandable-section>
